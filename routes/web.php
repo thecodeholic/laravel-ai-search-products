@@ -14,8 +14,9 @@ Route::get('/', function (EmbeddingService $embeddingService) {
             // Step 1: Generate embedding for the search query
             $queryEmbedding = $embeddingService->generateEmbedding($query);
 
-            // Step 2: Search Tiger Data for matching product IDs (ordered by semantic relevance)
-            // Only return products with distance < 0.7 (highly relevant results only)
+            // Step 2: Search Tiger Data product chunks for matching product IDs (ordered by semantic relevance)
+            // Searches across all product chunks and returns distinct product IDs based on best chunk match
+            // Only return products with distance < 0.8 (highly relevant results only)
             $productIds = ProductSearch::searchByEmbedding($queryEmbedding, limit: 20, maxDistance: 0.8);
 
             // Step 3: Fetch full product data from local database using the IDs
