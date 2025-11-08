@@ -113,18 +113,19 @@ return [
             // 'trust_server_certificate' => env('DB_TRUST_SERVER_CERTIFICATE', 'false'),
         ],
         'tiger' => [
-            'driver' => 'postgres',
+            'driver' => 'pgsql',
             'url' => env('TIGER_DB_URL'),
             'host' => env('TIGER_DB_HOST', '127.0.0.1'),
             'port' => env('TIGER_DB_PORT', '5432'),
-            'database' => env('TIGER_DB_DATABASE', 'laravel'),
-            'username' => env('TIGER_DB_USERNAME', 'root'),
+            'database' => env('TIGER_DB_DATABASE', 'tsdb'),
+            'username' => env('TIGER_DB_USERNAME', 'tsdbadmin'),
             'password' => env('TIGER_DB_PASSWORD', ''),
             'charset' => env('TIGER_DB_CHARSET', 'utf8'),
             'prefix' => '',
             'prefix_indexes' => true,
             'search_path' => 'public',
-        ]
+            'sslmode' => env('TIGER_DB_SSLMODE', 'require'),
+        ],
 
     ],
 

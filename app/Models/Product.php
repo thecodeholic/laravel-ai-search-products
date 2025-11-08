@@ -17,34 +17,11 @@ class Product extends Model
         'status',
     ];
 
-    protected $casts = [
-        'price' => 'decimal:2',
-    ];
-
-    /**
-     * Scope a query to search products by title and description.
-     */
-    public function scopeSearch(Builder $query, string $searchTerm): Builder
+    protected function casts(): array
     {
-        $driver = $query->getConnection()->getDriverName();
-
-        if (in_array($driver, ['mysql', 'mariadb'])) {
-            // Use FULLTEXT search for MySQL/MariaDB
-            return $query->whereFullText(['title', 'description'], $searchTerm)
-                ->orWhere('title', 'LIKE', "%{$searchTerm}%")
-                ->orWhere('description', 'LIKE', "%{$searchTerm}%");
-        } elseif ($driver === 'pgsql') {
-            // Use PostgreSQL full-text search
-            return $query->whereFullText(['title', 'description'], $searchTerm)
-                ->orWhere('title', 'ILIKE', "%{$searchTerm}%")
-                ->orWhere('description', 'ILIKE', "%{$searchTerm}%");
-        } else {
-            // Fallback to LIKE for SQLite and others
-            return $query->where(function ($q) use ($searchTerm) {
-                $q->where('title', 'LIKE', "%{$searchTerm}%")
-                  ->orWhere('description', 'LIKE', "%{$searchTerm}%");
-            });
-        }
+        return [
+            'price' => 'decimal:2',
+        ];
     }
 
     /**
