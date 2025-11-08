@@ -69,3 +69,12 @@ Route::get('/', function (EmbeddingService $embeddingService) {
         'searchQuery' => $query ?? '',
     ]);
 });
+
+Route::get('/products/{product}', function (Product $product) {
+    // Only allow viewing active products
+    abort_unless($product->status === 'active', 404);
+
+    return view('products.show', [
+        'product' => $product,
+    ]);
+})->name('products.show');

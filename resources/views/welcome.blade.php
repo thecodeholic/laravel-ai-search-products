@@ -45,7 +45,7 @@
             @if($products->count() > 0)
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                     @foreach($products as $product)
-                        <div class="bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+                        <a href="{{ route('products.show', $product) }}" class="block bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all hover:scale-105 transform">
                             <!-- Product Image -->
                             <div class="bg-white p-4 flex items-center justify-center h-64">
                                 <img
@@ -84,7 +84,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </a>
                     @endforeach
                 </div>
 
