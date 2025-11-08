@@ -1,0 +1,142 @@
+[
+    {
+        "title": "Cuff Bracelet",
+        "slug": "cuff-bracelet",
+        "description": "The cuff bracelet combines quality and functionality. Ideal for anyone looking to enhance their clothing experience. Crafted with care and designed for everyday use.",
+        "price": 486.38,
+        "category": "Clothing"
+    },
+    {
+        "title": "Premium Running Shorts",
+        "slug": "premium-running-shorts",
+        "description": "The premium running shorts combines quality and functionality. Ideal for anyone looking to enhance their electronics experience. Crafted with care and designed for everyday use.",
+        "price": 180.46,
+        "category": "Electronics"
+    },
+    {
+        "title": "Luxury Watch Organizer",
+        "slug": "luxury-watch-organizer",
+        "description": "The luxury watch organizer combines quality and functionality. Ideal for anyone looking to enhance their home experience. Crafted with care and designed for everyday use.",
+        "price": 461.83,
+        "category": "Home"
+    },
+    {
+        "title": "Hoodie",
+        "slug": "hoodie",
+        "description": "The hoodie combines quality and functionality. Ideal for anyone looking to enhance their beauty experience. Crafted with care and designed for everyday use.",
+        "price": 318.81,
+        "category": "Beauty"
+    },
+    {
+        "title": "Premium Cable Organizer",
+        "slug": "premium-cable-organizer",
+        "description": "The premium cable organizer combines quality and functionality. Ideal for anyone looking to enhance their clothing experience. Crafted with care and designed for everyday use.",
+        "price": 405.96,
+        "category": "Clothing"
+    },
+    {
+        "title": "Adjustable Bluetooth Speaker",
+        "slug": "adjustable-bluetooth-speaker",
+        "description": "The adjustable bluetooth speaker combines quality and functionality. Ideal for anyone looking to enhance their fitness experience. Crafted with care and designed for everyday use.",
+        "price": 201.73,
+        "category": "Fitness"
+    },
+    {
+        "title": "Smart Push-Up Bars",
+        "slug": "smart-push-up-bars",
+        "description": "The smart push-up bars combines quality and functionality. Ideal for anyone looking to enhance their fitness experience. Crafted with care and designed for everyday use.",
+        "price": 421.88,
+        "category": "Fitness"
+    },
+    {
+        "title": "Modern Tablet Holder",
+        "slug": "modern-tablet-holder",
+        "description": "The modern tablet holder combines quality and functionality. Ideal for anyone looking to enhance their home experience. Crafted with care and designed for everyday use.",
+        "price": 314.26,
+        "category": "Home"
+    },
+    {
+        "title": "Smart Hair Dryer",
+        "slug": "smart-hair-dryer",
+        "description": "The smart hair dryer combines quality and functionality. Ideal for anyone looking to enhance their beauty experience. Crafted with care and designed for everyday use.",
+        "price": 27.85,
+        "category": "Beauty"
+    },
+    {
+        "title": "Modern Smart Fitness Tracker",
+        "slug": "modern-smart-fitness-tracker",
+        "description": "The modern smart fitness tracker combines quality and functionality. Ideal for anyone looking to enhance their beauty experience. Crafted with care and designed for everyday use.",
+        "price": 448.8,
+        "category": "Beauty"
+    },
+    {
+        "title": "Mini Fan",
+        "slug": "mini-fan",
+        "description": "The mini fan combines quality and functionality. Ideal for anyone looking to enhance their clothing experience. Crafted with care and designed for everyday use.",
+        "price": 408.05,
+        "category": "Clothing"
+    },
+    {
+        "title": "Running Shorts",
+        "slug": "running-shorts",
+        "description": "The running shorts combines quality and functionality. Ideal for anyone looking to enhance their beauty experience. Crafted with care and designed for everyday use.",
+        "price": 227.86,
+        "category": "Beauty"
+    },
+    {
+        "title": "Adjustable Curtain Set",
+        "slug": "adjustable-curtain-set",
+        "description": "The adjustable curtain set combines quality and functionality. Ideal for anyone looking to enhance their home experience. Crafted with care and designed for everyday use.",
+        "price": 397.74,
+        "category": "Home"
+    },
+    {
+        "title": "Modern Hoodie",
+        "slug": "modern-hoodie",
+        "description": "The modern hoodie combines quality and functionality. Ideal for anyone looking to enhance their accessories experience. Crafted with care and designed for everyday use.",
+        "price": 360.7,
+        "category": "Accessories"
+    },
+    {
+        "title": "Smart LED Desk Lamp",
+        "slug": "smart-led-desk-lamp",
+        "description": "The smart led desk lamp combines quality and functionality. Ideal for anyone looking to enhance their beauty experience. Crafted with care and designed for everyday use.",
+        "price": 68.24,
+        "category": "Beauty"
+    },
+    {
+        "title": "Red Running Sneakers",
+        "slug": "red-running-sneakers",
+        "description": "Lightweight red sneakers designed for comfort and performance. Breathable mesh upper and cushioned sole ensure lasting comfort during runs or workouts.",
+        "price": 74.99,
+        "category": "Clothing"
+    },
+    {
+        "title": "Soft Gray Hoodie with Front Pocket",
+        "slug": "soft-gray-hoodie-with-front-pocket",
+        "description": "Cozy gray hoodie crafted from premium cotton blend fabric. Designed for everyday comfort with a relaxed fit and soft interior lining.",
+        "price": 49.0,
+        "category": "Clothing"
+    },
+    {
+        "title": "Wireless Earbuds with Charging Case",
+        "slug": "wireless-earbuds-with-charging-case",
+        "description": "Compact Bluetooth earbuds that deliver rich sound and clear calls. Sleek design with a portable charging case for all-day listening.",
+        "price": 89.9,
+        "category": "Electronics"
+    },
+    {
+        "title": "Modern Three-Seater Sofa",
+        "slug": "modern-three-seater-sofa",
+        "description": "Contemporary three-seater sofa upholstered in durable woven fabric. Features deep seating and firm cushions for long-lasting comfort.",
+        "price": 449.99,
+        "category": "Home"
+    },
+    {
+        "title": "Black Leather Backpack",
+        "slug": "black-leather-backpack",
+        "description": "Elegant leather backpack with multiple compartments and padded straps. Suitable for daily commuting or travel while maintaining a sleek look.",
+        "price": 119.99,
+        "category": "Accessories"
+    }
+]
