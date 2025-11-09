@@ -71,4 +71,40 @@ class ProductSearch extends Model
             ->limit($limit)
             ->get();
     }
+
+    /**
+     * Perform BM25 keyword search on product chunks and return matching product IDs.
+     *
+     * Uses Tiger Cloud's pg_textsearch extension for BM25 ranking.
+     * Searches across all product chunks and returns distinct product IDs,
+     * using the best (lowest score) matching chunk for each product.
+     *
+     * Note: BM25 scores are negative - more negative = better match.
+     *
+     * @param  string  $query  The search query text
+     * @param  int  $limit  Maximum number of products to return
+     * @param  float  $scoreThreshold  Maximum score threshold (more negative = better, e.g., -2.0)
+     * @return array Array of product IDs ordered by BM25 relevance (best chunk match)
+     */
+    public static function searchByBM25(string $query, int $limit = 20, float $scoreThreshold = -1.0): array
+    {
+        // Escape the query for safe SQL usage
+        $escapedQuery = addslashes($query);
+
+        // Search product chunks using BM25 and get the best matching chunk per product
+        // BM25 returns negative scores where lower (more negative) = better match
+        $results = DB::connection('tiger')
+            ->table('product_chunks')
+            ->select(
+                'product_id',
+                DB::raw("MIN(chunk_text <@> to_bm25query('{$escapedQuery}', 'product_chunks_bm25_idx')) as min_score")
+            )
+            ->whereRaw("chunk_text <@> to_bm25query('{$escapedQuery}', 'product_chunks_bm25_idx') < ?", [$scoreThreshold])
+            ->groupBy('product_id')
+            ->orderBy('min_score', 'asc')
+            ->limit($limit)
+            ->get();
+
+        return $results->pluck('product_id')->toArray();
+    }
 }

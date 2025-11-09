@@ -1,11 +1,11 @@
 <?php
 
 use App\Models\Product;
-use App\Models\ProductSearch;
 use App\Services\EmbeddingService;
+use App\Services\HybridSearchService;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function (EmbeddingService $embeddingService) {
+Route::get('/', function (EmbeddingService $embeddingService, HybridSearchService $hybridSearchService) {
     $query = request()->get('q');
     $perPage = 24;
 
@@ -14,10 +14,10 @@ Route::get('/', function (EmbeddingService $embeddingService) {
             // Step 1: Generate embedding for the search query
             $queryEmbedding = $embeddingService->generateEmbedding($query);
 
-            // Step 2: Search Tiger Data product chunks for matching product IDs (ordered by semantic relevance)
-            // Searches across all product chunks and returns distinct product IDs based on best chunk match
-            // Only return products with distance < 0.8 (highly relevant results only)
-            $productIds = ProductSearch::searchByEmbedding($queryEmbedding, limit: 20, maxDistance: 0.8);
+            // Step 2: Perform hybrid search combining semantic vector search with BM25 keyword search
+            // Uses Reciprocal Rank Fusion to combine results from both search methods
+            // Returns product IDs ordered by combined relevance score (best of both worlds)
+            $productIds = $hybridSearchService->search($query, $queryEmbedding, limit: 20);
 
             // Step 3: Fetch full product data from local database using the IDs
             if (! empty($productIds)) {
@@ -48,7 +48,7 @@ Route::get('/', function (EmbeddingService $embeddingService) {
             }
         } catch (\Exception $e) {
             // Fallback to empty results if search fails
-            logger()->error('Failed to perform semantic search', [
+            logger()->error('Failed to perform hybrid search', [
                 'query' => $query,
                 'error' => $e->getMessage(),
             ]);
